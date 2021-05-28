@@ -1,5 +1,7 @@
 //https://www.codewars.com/kata/546d15cebed2e10334000ed9/train/javascript
 
+
+//THE CHAD WAY to do it
 function solveExpression(exp) {
   let arr = exp.split("=")[0].toString().split("");
   let expressions = ["-", "+", "*"];
@@ -71,6 +73,18 @@ function solveExpression(exp) {
 }
 
 console.log(solveExpression("-?56373--9216=-?47157"));
+
+// the nerd .replace('--', '+') way 
+
+function solveExpression(exp) {
+    exp = exp.replace('=','==').replace('--','+');
+    for(var i = 0; i < 10; i++){
+      if(eval(exp.replace(/\?/g,i)) && !exp.includes(i)){
+          if(!/^00+$/.test(exp.replace(/\?/g,i).split('==')[1]))  return i;
+      }
+    }
+    return -1;
+  }
 
 // describe('Fixed tests', function() {
 //     it('Example tests', function() {
