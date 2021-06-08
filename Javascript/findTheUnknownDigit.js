@@ -1,7 +1,6 @@
 //https://www.codewars.com/kata/546d15cebed2e10334000ed9/train/javascript
 
 
-//THE CHAD WAY to do it
 function solveExpression(exp) {
   let arr = exp.split("=")[0].toString().split("");
   let expressions = ["-", "+", "*"];
@@ -74,7 +73,7 @@ function solveExpression(exp) {
 
 console.log(solveExpression("-?56373--9216=-?47157"));
 
-// the nerd .replace('--', '+') way 
+// .replace('--', '+') way, top solution on codewars much more elegant than mine
 
 function solveExpression(exp) {
     exp = exp.replace('=','==').replace('--','+');
