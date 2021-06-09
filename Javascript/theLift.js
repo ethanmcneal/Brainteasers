@@ -1,6 +1,6 @@
 //https://www.codewars.com/kata/58905bfa1decb981da00009e/train/javascript
 
-
+// 3KYU
 
 // Rules
 // Lift Rules
