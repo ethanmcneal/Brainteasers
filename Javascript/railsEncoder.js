@@ -1,5 +1,7 @@
 //https://www.codewars.com/kata/58c5577d61aefcf3ff000081/train/javascript
 
+// my first 3Kyu kata
+
 function encodeRailFenceCipher(string, numberRails, lengths) {
     let letterArray = string.split('')
     let res = []
@@ -36,7 +38,6 @@ function encodeRailFenceCipher(string, numberRails, lengths) {
         res[count].length < lengths[count] ? res[count].push(letterArray[i]) 
         : (count += 1, res[count].push(letterArray[i]))
         }
-        console.log(res)
     for(let i = 0; i < res[0].length; i ++){
         count = 0
         while(count <= numberRails - 1){
