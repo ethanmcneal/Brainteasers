@@ -16,12 +16,13 @@ function encodeRailFenceCipher(string, numberRails, lengths) {
         }
         countingUp ? count += 1 : count = count - 1
     }
-    // console.log(res)
+    // console.log('res', res.map(arr => arr.join('')).join(''))
     return lengths ? res.map(arr => arr.length) : res.map(arr => arr.join('')).join('')
     //res.map(arr => arr.join('')).join('')
   }
 
-  console.log(encodeRailFenceCipher("WEAREDISCOVEREDFLEEATONCE", 3)) // WECRLTEERDSOEEFEAOCAIVDEN
+//   console.log(encodeRailFenceCipher('WEAREDISCOVEREDFLEEATONCE', 4)) // WECRLTEERDSOEEFEAOCAIVDEN
+                                                                    //WIREEEDSEEEACAECVDLTNROFO
 
   function decodeRailFenceCipher(string, numberRails) {
     let letterArray = string.split('')
@@ -30,23 +31,28 @@ function encodeRailFenceCipher(string, numberRails, lengths) {
     while(res.length != numberRails){res.push([])}
     let lengths = encodeRailFenceCipher(string, numberRails, true)
     let count = 0
-    // console.log(res[0].length)
+    
     for(let i = 0; i < letterArray.length; i ++){
         res[count].length < lengths[count] ? res[count].push(letterArray[i]) 
         : (count += 1, res[count].push(letterArray[i]))
         }
-    for(let i = 0; i < letterArray.length; i ++){
+        console.log(res)
+    for(let i = 0; i < res[0].length; i ++){
         count = 0
         while(count <= numberRails - 1){
             decodedLetters.push([res[count][i]])
             count += 1  
         }
         count = count - 2
+        while(count > 0){
         decodedLetters.push(res[count][i + 1])
         res[count].splice([i + 1],1)
+        count = count - 1
+        }
     }
     return decodedLetters.join('')
   }
 
 
   console.log(decodeRailFenceCipher('WIREEEDSEEEACAECVDLTNROFO', 4)) // => "WEAREDISCOVEREDFLEEATONCE"
+                                    //WIREEEDSEEEACAECVDLTNROFO
