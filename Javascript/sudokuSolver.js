@@ -1,13 +1,33 @@
 //https://www.codewars.com/kata/5296bc77afba8baa690002d7/train/javascript
 
 
+//the kata said brute force would work, but I want to avoid that if possible
+// going to try the rows and columns check first, I don't even know where to start when it comes to checking
+//the 3x3 grids
+function sudoku(puzzle, prevPuzzle) {
+     let columns = {0: [], 1: [], 2:[],3: [], 4: [], 5:[],6: [], 7: [], 8:[]}
+     for(row in puzzle){
+         for(let i = 0; i < puzzle[row].length; i ++){
+             columns[i].push(puzzle[row][i])
+         }
+     }
+     solve(columns, puzzle)
+  }
 
-function sudoku(puzzle) {
-    //return the solved puzzle as a 2d array of 9 x 9 
+  const solve = (columns, puzzle) => {
+    for(row in puzzle){
+        for(let i = 0; i < puzzle[row].length; i ++){
+            if(puzzle[row][i] == 0){
+                
+            }
+        }
+    }
   }
 
 
-
+  // each array should contain each digit in 1-9 only once
+  // once an array has a number, no other arrays should have that number in the same index
+  // i.e. puzzle[0][0] = 5, so puzzle[1-8][0] cannot be 5 
 
 var puzzle = [
     [5,3,0,0,7,0,0,0,0],
@@ -19,6 +39,7 @@ var puzzle = [
     [0,6,0,0,0,0,2,8,0],
     [0,0,0,4,1,9,0,0,5],
     [0,0,0,0,8,0,0,7,9]];
+
 
 sudoku(puzzle);
 /* Should return
