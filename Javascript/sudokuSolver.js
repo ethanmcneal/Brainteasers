@@ -13,14 +13,14 @@ function sudoku(puzzle, prevPuzzle) {
      }
      solve(columns, puzzle)
   }
-
+    //coming back to this
   const solve = (columns, puzzle) => {
     for(row in puzzle){
         for(let i = 0; i < puzzle[row].length; i ++){
             if(puzzle[row][i] == 0){
-                
+
             }
-        }
+        } 
     }
   }
 
