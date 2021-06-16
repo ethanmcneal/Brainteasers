@@ -94,3 +94,9 @@ console.log(sudoku(puzzle))
 [9,6,1,5,3,7,2,8,4],
 [2,8,7,4,1,9,6,3,5],
 [3,4,5,2,8,6,1,7,9]] */
+
+// got stuck and ended up looking to a medium article for help
+
+//https://medium.com/swlh/backtracking-algorithm-to-solve-sudoku-puzzle-in-javascript-732aedcf5e2
+
+//sad I didn't solve this with my own brain but I learned a lot nonetheless
