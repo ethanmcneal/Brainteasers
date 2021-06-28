@@ -17,5 +17,5 @@ print(likes(['alex', 'mark', 'john', 'luke', 'ethan']))
 
 
 """ https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/python
-sort of cheating but a good intro to interpolation, if, elif, and else for me
+good intro to interpolation, if, elif, and else for me
 """
