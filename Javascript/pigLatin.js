@@ -2,12 +2,12 @@
 
 function pigIt(str){
     let wordArray = str.split(' ')
-    console.log(wordArray)
     let res = []
     for(let i = 0; i < wordArray.length; i++){
         let word = wordArray[i].split('')
+        if(word[0].match(/[a-z, A-Z]/)){
         word.push(`${word[0]}ay`)
-        word.splice(0, 1)
+        word.splice(0, 1)}
         res.push(word.join(''))
     }
     return res.join(' ')
