@@ -14,3 +14,6 @@ const twoSum = (nums, target) => {
 }
 
 console.log(twoSum([1,2,3,4,5], 3))
+
+// function that takes an array of numbers, and a target value,
+// return the indexes of the two nums that add up to the target value
