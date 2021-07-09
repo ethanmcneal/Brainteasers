@@ -1,0 +1,26 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanmcneal/Brainteasers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethanmcneal/Brainteasers/issues"
+  },
+  "homepage": "https://github.com/ethanmcneal/Brainteasers#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
