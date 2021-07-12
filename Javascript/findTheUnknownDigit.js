@@ -45,7 +45,6 @@ function solveExpression(exp) {
     let x = firstNum.replace(/\?/g, `${j}`);
     let y = secondNum.replace(/\?/g, `${j}`);
     let z = answer.replace(/\?/g, `${j}`);
-    console.log(x, y, z);
 
     if (expression == "+") {
       if (parseInt(x) + parseInt(y) == parseInt(z)) {
@@ -67,15 +66,13 @@ function solveExpression(exp) {
       }
     }
   }
-  console.log(exp);
   return res;
 }
 
-console.log(solveExpression("-?56373--9216=-?47157"));
 
 // .replace('--', '+') way, top solution on codewars much more elegant than mine
 
-function solveExpression(exp) {
+function solveExpressionRegex(exp) {
     exp = exp.replace('=','==').replace('--','+');
     for(var i = 0; i < 10; i++){
       if(eval(exp.replace(/\?/g,i)) && !exp.includes(i)){
@@ -85,6 +82,8 @@ function solveExpression(exp) {
     return -1;
   }
 
+
+  module.exports = solveExpression
 // describe('Fixed tests', function() {
 //     it('Example tests', function() {
 //       var data = [
