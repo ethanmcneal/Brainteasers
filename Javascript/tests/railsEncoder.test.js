@@ -1,0 +1,2 @@
+
+const functions = require('../railsEncoder')

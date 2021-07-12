@@ -2,7 +2,9 @@
 
 // my first 3Kyu kata
 
-function encodeRailFenceCipher(string, numberRails, lengths) {
+const functions = {
+
+encode: function encodeRailFenceCipher(string, numberRails, lengths) {
     let letterArray = string.split('')
     let res = []
     while(res.length != numberRails){res.push([])}
@@ -21,12 +23,12 @@ function encodeRailFenceCipher(string, numberRails, lengths) {
     // console.log('res', res.map(arr => arr.join('')).join(''))
     return lengths ? res.map(arr => arr.length) : res.map(arr => arr.join('')).join('')
     //res.map(arr => arr.join('')).join('')
-  }
+  },
 
 //   console.log(encodeRailFenceCipher('WEAREDISCOVEREDFLEEATONCE', 4)) // WECRLTEERDSOEEFEAOCAIVDEN
                                                                     //WIREEEDSEEEACAECVDLTNROFO
 
-  function decodeRailFenceCipher(string, numberRails) {
+  decode: function decodeRailFenceCipher(string, numberRails) {
     let letterArray = string.split('')
     let res = []
     let decodedLetters = []
@@ -53,7 +55,7 @@ function encodeRailFenceCipher(string, numberRails, lengths) {
     }
     return decodedLetters.join('')
   }
-
-
+}
+module.exports = functions
   console.log(decodeRailFenceCipher('WIREEEDSEEEACAECVDLTNROFO', 4)) // => "WEAREDISCOVEREDFLEEATONCE"
                                     //WIREEEDSEEEACAECVDLTNROFO
