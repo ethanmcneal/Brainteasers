@@ -4,7 +4,7 @@
 
 const functions = {
 
-encode: function encodeRailFenceCipher(string, numberRails, lengths) {
+encodeRailFenceCipher: (string, numberRails, lengths) => {
     let letterArray = string.split('')
     let res = []
     while(res.length != numberRails){res.push([])}
@@ -20,20 +20,14 @@ encode: function encodeRailFenceCipher(string, numberRails, lengths) {
         }
         countingUp ? count += 1 : count = count - 1
     }
-    // console.log('res', res.map(arr => arr.join('')).join(''))
     return lengths ? res.map(arr => arr.length) : res.map(arr => arr.join('')).join('')
-    //res.map(arr => arr.join('')).join('')
   },
-
-//   console.log(encodeRailFenceCipher('WEAREDISCOVEREDFLEEATONCE', 4)) // WECRLTEERDSOEEFEAOCAIVDEN
-                                                                    //WIREEEDSEEEACAECVDLTNROFO
-
-  decode: function decodeRailFenceCipher(string, numberRails) {
+  decodeRailFenceCipher: (string, numberRails) => {
     let letterArray = string.split('')
     let res = []
     let decodedLetters = []
     while(res.length != numberRails){res.push([])}
-    let lengths = encodeRailFenceCipher(string, numberRails, true)
+    let lengths = functions.encodeRailFenceCipher(string, numberRails, true)
     let count = 0
     
     for(let i = 0; i < letterArray.length; i ++){
@@ -56,6 +50,8 @@ encode: function encodeRailFenceCipher(string, numberRails, lengths) {
     return decodedLetters.join('')
   }
 }
+
+
 module.exports = functions
-  console.log(decodeRailFenceCipher('WIREEEDSEEEACAECVDLTNROFO', 4)) // => "WEAREDISCOVEREDFLEEATONCE"
+ // console.log(decodeRailFenceCipher('WIREEEDSEEEACAECVDLTNROFO', 4)) // => "WEAREDISCOVEREDFLEEATONCE"
                                     //WIREEEDSEEEACAECVDLTNROFO
