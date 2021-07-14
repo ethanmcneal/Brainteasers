@@ -82,8 +82,6 @@ function checkValue (puzzle, row, column, value) {
     [0, 0, 0, 4, 1, 9, 0, 0, 5],
     [0, 0, 0, 0, 8, 0, 0, 7, 9],
   ];
-
-console.log(sudoku(puzzle))
 /* Should return
 [[5,3,4,6,7,8,9,1,2],
 [6,7,2,1,9,5,3,4,8],
@@ -95,8 +93,4 @@ console.log(sudoku(puzzle))
 [2,8,7,4,1,9,6,3,5],
 [3,4,5,2,8,6,1,7,9]] */
 
-// got stuck and ended up looking to a medium article for help
-
-//https://medium.com/swlh/backtracking-algorithm-to-solve-sudoku-puzzle-in-javascript-732aedcf5e2
-
-//sad I didn't solve this with my own brain but I learned a lot nonetheless
+module.exports = sudoku
