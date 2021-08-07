@@ -23,42 +23,6 @@ const checkIfNumContainsSameDigits = (currentNumArray, numArr) => {
 };
 
 // somewhat of a brute-force solution, but works well
+module.exports = nextBigger
 
-console.log(nextBigger(12)); // returns 21
-console.log(nextBigger(513)); // returns 531
-console.log(nextBigger(2017)); // returns 2071
 
-console.time('✅')
-
-// console.log(nextBigger(89999999)); // 11.890s, really not efficient at all for huge gaps in numbers, but hey it works
-
-console.timeEnd('✅')
-
-// top answer on codewars :
-function nextBigger2(n){
-    console.log(n);
-    var chars = n.toString().split('');
-    var i = chars.length-1;
-    while(i > 0) {
-      if (chars[i]>chars[i-1]) break;
-      i--;
-    }
-    if (i == 0) return -1;
-    var suf = chars.splice(i).sort();
-    var t = chars[chars.length-1];
-    for (i = 0; i < suf.length; ++i) {
-      if (suf[i] > t) break;
-    }
-    chars[chars.length-1] = suf[i]
-    suf[i] = t;
-    var res = chars.concat(suf);
-    var num = parseInt(res.join(''));
-    console.log("->" +num);
-    return num;
-  }
-
-console.time('here')
-
-console.log(nextBigger2(8999999999999)); // .254ms
-
-console.timeEnd('here')
